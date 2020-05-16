@@ -73,6 +73,13 @@ def g(y):
     def f(x):
         return x + y
     return f # returns a higher order function
+
+equivalent to;
+def g(y):
+    return lambda x: x + y
+
+g(y)(x) = x + y
+g = lambda y: (lambda x: x + y)
 """    
 
 def plus(y):
