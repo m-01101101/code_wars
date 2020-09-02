@@ -42,6 +42,7 @@
 
 class Format:
     def __init__(self):
+        self.wrapper = None
         pass
 
     # def __repr__(self):
@@ -55,13 +56,12 @@ class Format:
 
     # chaining - implemented by ensuring that all chainable methods return self
 
-    # @property?
-
     def div(txt):
+        self.wrapper += f'<div>{txt}</div>'
         return f"<div>{txt}</div>"
 
     def p(txt):
-        return f"<bar>{txt}</bar>"
+        return f"<p>{txt}</p>"
 
     def span(txt):
         return f"<span>{txt}</span>"
@@ -69,6 +69,9 @@ class Format:
     def h1(txt):
         return f"<h1>{txt}</h1>"
 
+    def __add__(self, other):
+        self.wrapper = self.wrapper + other.wrapper
+        return self.wrapper
 
 # class Format:
 
