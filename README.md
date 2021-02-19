@@ -2,3 +2,5 @@
 
 # Code wars
 Answers to Kata challenges from [code wars](https://www.codewars.com/)
+
+Some day to be converted into cookbook form.
