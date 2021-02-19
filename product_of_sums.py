@@ -36,3 +36,16 @@ def find_product3(inputs: List[int]) -> int:
             return i * j * k
 
 # needs now becomes a dictionary that we look up
+
+"""note on line comprehension
+
+for line in line:
+    for chunk in line.split(" "):
+        key, value = chunk.split(":")
+
+equivalent to
+
+tuple(chunk.split(":")
+for line in lines
+for chunk in line.split(" ")
+"""
