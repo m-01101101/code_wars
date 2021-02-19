@@ -16,6 +16,7 @@ Note, elements will be unique
 
 # attempt 1, works but too inefficient for large list
 
+
 def find_missing_number(y):
     # sort list
     y = sorted(y)
@@ -35,26 +36,29 @@ def find_missing_number(y):
             holding += 1
     return missing
 
+
 # same thing
 def find_missing_num(b):
     b = sorted(b)
-    missing = len(b)+1
+    missing = len(b) + 1
     for i in b:
-        if b.index(i)+1 != i:
-            missing = b.index(i)+1
+        if b.index(i) + 1 != i:
+            missing = b.index(i) + 1
             return missing
-    return missing    
+    return missing
+
 
 # solution, without using loops
 def find_missing(b):
     b = set(b)
-    r = set(range(1, len(b)+1))
+    r = set(range(1, len(b) + 1))
     if r == b:
-        missing = len(b)+1
+        missing = len(b) + 1
         return missing
     else:
         missing = b - r
-        return list(missing)[0]    
+        return list(missing)[0]
+
 
 """
 Alternative, clever solution

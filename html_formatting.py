@@ -33,7 +33,7 @@
 # And finally, we should be able to nest Format calls.
 
 # Format.div(
-#   Format.h1("Title"), 
+#   Format.h1("Title"),
 #   Format.p(f"Paragraph with a {Format.span('span')}.")
 # )
 # # returns "<div><h1>Title</h1><p>Paragraph with a <span>span</span>.</p></div>"
@@ -57,7 +57,7 @@ class Format:
     # chaining - implemented by ensuring that all chainable methods return self
 
     def div(txt):
-        self.wrapper += f'<div>{txt}</div>'
+        self.wrapper += f"<div>{txt}</div>"
         return f"<div>{txt}</div>"
 
     def p(txt):
@@ -72,6 +72,7 @@ class Format:
     def __add__(self, other):
         self.wrapper = self.wrapper + other.wrapper
         return self.wrapper
+
 
 # class Format:
 

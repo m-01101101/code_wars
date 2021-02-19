@@ -6,7 +6,7 @@ def josephus_survivor(n, k):
 
 
 def josephus_survivor(n, k):
-    return reduce(lambda x, y: (x+k) % y, xrange(0, n+1)) + 1
+    return reduce(lambda x, y: (x + k) % y, xrange(0, n + 1)) + 1
 
 
 def josephus_survivor(n, k):
@@ -16,7 +16,7 @@ def josephus_survivor(n, k):
     result = []
     index = []
 
-    iter = range(1, n+1)
+    iter = range(1, n + 1)
 
     while len(result) < n:
         for a, b in enumerate(iter):

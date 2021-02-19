@@ -16,12 +16,16 @@ it should return a custom FizzBuzz sequence, for example:
 """
 
 
-def fizzbuzz(f='Fizz', b='Buzz', i=3, j=5) -> list:
-    
+def fizzbuzz(f="Fizz", b="Buzz", i=3, j=5) -> list:
+
     # could replace if n % i == 0 with not
-    return [(f + b) if n % i == 0 and n % j == 0
-            else f if n % i == 0 
-            else b if n % j == 0 
-            else n 
-            for n in range(1, 101)
-            ]
+    return [
+        (f + b)
+        if n % i == 0 and n % j == 0
+        else f
+        if n % i == 0
+        else b
+        if n % j == 0
+        else n
+        for n in range(1, 101)
+    ]

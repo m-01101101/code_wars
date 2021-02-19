@@ -36,12 +36,14 @@ words ending with doubled consonants (e. g. tett)
 words ending with y
 words ending with u, i
 """
+
+
 def instrumental(word: str) -> str:
-    front = {'e': 'é', 'i': 'í', 'ö': 'ő', 'ü': 'ű'}
-    back = {'a': 'á', 'o': 'ó', 'u': 'ú'}
-    
-    suffix = {'front': 'vel', 'back': 'val'}
-    digraphs = {'sz': 'ssz', 'zs': 'zzs', 'cs': 'ccs'}
+    front = {"e": "é", "i": "í", "ö": "ő", "ü": "ű"}
+    back = {"a": "á", "o": "ó", "u": "ú"}
+
+    suffix = {"front": "vel", "back": "val"}
+    digraphs = {"sz": "ssz", "zs": "zzs", "cs": "ccs"}
 
     l_front = []
     l_back = []
@@ -49,14 +51,14 @@ def instrumental(word: str) -> str:
     if word[-1] in front:  # ≡ if word.endswith(tuple(front.keys()))
         # word = word.replace() # replaces changes all instances
         word = word[:-1] + front[word[-1]]
-        word += suffix['front']
+        word += suffix["front"]
     elif word[-1] in front.values():
-        word += suffix['front']
+        word += suffix["front"]
     elif word[-1] in back:
         word = word[:-1] + back[word[-1]]
-        word += suffix['back']
+        word += suffix["back"]
     elif word[-1] in back.values():
-        word += suffix['back']
+        word += suffix["back"]
     else:
         if word[-2:] in digraphs:
             word = word.replace(word[-2:], digraphs[word[-2:]])
@@ -71,10 +73,11 @@ def instrumental(word: str) -> str:
         for i in back.values():
             l_back.append(word.rfind(i))
         if max(l_front) > max(l_back):
-            word += 'el'
+            word += "el"
         elif max(l_back) > max(l_front):
-            word += 'al'
+            word += "al"
     return word
+
 
 # def instrumental_(word: str) -> str:
 #     vowels = {'front': {'e': 'é', 'i': 'í', 'ö': 'ő', 'ü': 'ű'},

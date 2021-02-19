@@ -7,13 +7,15 @@ SS = seconds, padded to 2 digits, range: 00 - 59
 The maximum time never exceeds 359999 (99:59:59)
 """
 
+
 def make_readable(seconds: int) -> str:
     # could have used floor division //
     # rather than converting to int
-    hh = str(int((seconds/60) / 60)).zfill(2)
-    mm = str(int((seconds/60) % 60)).zfill(2)
+    hh = str(int((seconds / 60) / 60)).zfill(2)
+    mm = str(int((seconds / 60) % 60)).zfill(2)
     ss = str(int(seconds % 60)).zfill(2)
-    return f'{hh}:{mm}:{ss}'
+    return f"{hh}:{mm}:{ss}"
+
 
 """
 super smart

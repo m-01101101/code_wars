@@ -15,6 +15,7 @@ For example:
  ```
 """
 
+
 def persistence(num):
     # turn num into a list
     num = [int(x) for x in list(str(num))]
@@ -24,8 +25,8 @@ def persistence(num):
     while len(num) > 1:
         for _ in num:
             # multiply each element
-            # could use 
-                #  reduce((lambda x, y: x * y), num) 
+            # could use
+            #  reduce((lambda x, y: x * y), num)
             # not entirely sure how it keeps track
             result = result * _
         # add one to the count
@@ -35,6 +36,7 @@ def persistence(num):
         # reset result to 1 for our for loop
         result = 1
     return count
+
 
 """
 Alternative solution
@@ -50,4 +52,4 @@ def persistence(n):
         i+=1
     return i
 
-"""    
+"""

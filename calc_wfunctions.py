@@ -6,12 +6,14 @@ def zero(*op):
         # using * unpacks a tuple, so need to return first element
         return op[0](y)
 
+
 def one(*op):
     if len(op) == 0:
         return 1
     else:
         y = 1
         return op[0](y)
+
 
 def two(*op):
     if len(op) == 0:
@@ -20,6 +22,7 @@ def two(*op):
         y = 2
         return op[0](y)
 
+
 def three(*op):
     if len(op) == 0:
         return 3
@@ -27,19 +30,22 @@ def three(*op):
         y = 3
         return op[0](y)
 
+
 def four(*op):
     if len(op) == 0:
         return 4
     else:
         y = 4
         return op[0](y)
-   
+
+
 def five(*op):
     if len(op) == 0:
         return 5
     else:
         y = 5
         return op[0](y)
+
 
 def six(*op):
     if len(op) == 0:
@@ -48,6 +54,7 @@ def six(*op):
         y = 6
         return op[0](y)
 
+
 def seven(*op):
     if len(op) == 0:
         return 7
@@ -55,19 +62,23 @@ def seven(*op):
         y = 7
         return op[0](y)
 
+
 def eight(*op):
     if len(op) == 0:
         return 8
     else:
         y = 8
-        return op[0](y) 
+        return op[0](y)
+
 
 def nine(*op):
     if len(op) == 0:
         return 9
     else:
         y = 9
-        return op[0](y) 
+        return op[0](y)
+
+
 """
 create operators by returning a function
 def g(y):
@@ -81,17 +92,21 @@ def g(y):
 
 g(y)(x) = x + y
 g = lambda y: (lambda x: x + y)
-"""    
+"""
+
 
 def plus(y):
     return lambda x: x + y
 
+
 def minus(y):
     return lambda x: x - y
-    
+
+
 def times(y):
     return lambda x: x * y
-    
+
+
 def divided_by(y):
     return lambda x: x // y
 

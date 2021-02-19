@@ -31,6 +31,7 @@ def josephus(n, k):
                 tracker = 0
     return result, index
 
+
 # elegant solution
 
 
@@ -41,6 +42,7 @@ def josephus(xs, k):
         i = (i + k - 1) % len(xs)
         ys.append(xs.pop(i))
     return ys
+
 
 """
 this looks like a perfect use case for reduce

@@ -9,11 +9,12 @@ Create a function that will return true if the walk the app gives you will take 
 Return false otherwise.
 """
 
+
 def is_valid_walk(walk):
     if len(walk) != 10:
         return False
     else:
-        if (walk.count('n') == walk.count('s')) & (walk.count('e') == walk.count('w')):
+        if (walk.count("n") == walk.count("s")) & (walk.count("e") == walk.count("w")):
             return True
         else:
             return False
@@ -21,4 +22,4 @@ def is_valid_walk(walk):
 
 # can be done in one line, would have this in my else as i like nipping in the bud the length check
 # def isValidWalk(walk):
-    # return len(walk) == 10 and walk.count('n') == walk.count('s') and walk.count('e') == walk.count('w')
+# return len(walk) == 10 and walk.count('n') == walk.count('s') and walk.count('e') == walk.count('w')

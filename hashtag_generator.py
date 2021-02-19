@@ -12,8 +12,8 @@ If the input or the result is an empty string it must return false.
 
 
 def generate_hashtag(s):
-    hashtag = [w.strip().capitalize() for w in s.split(' ')]
+    hashtag = [w.strip().capitalize() for w in s.split(" ")]
     if len(str(hashtag)) > 140 or len(s) == 0:  # better practice if not s
         return False
     else:
-        return '#'+''.join(hashtag)
+        return "#" + "".join(hashtag)

@@ -1,6 +1,6 @@
 # my attempt
 def move_zeros(array):
-    """Place all zeros at the end of the string, preserving the order of other elements. 
+    """Place all zeros at the end of the string, preserving the order of other elements.
     False not equivalent to 0"""
     # False regarded as == 0, but None and empty is not, so added or statement
     result = list(filter(lambda x: x != 0 or x is False, array))
@@ -8,10 +8,12 @@ def move_zeros(array):
     result.extend([0 for i in list(range(0, (len(array) - len(result))))])
     return result
 
+
 # best practice1
 def move_zeros(arr):
-    l = [i for i in arr if isinstance(i, bool) or i!=0]
-    return l+[0]*(len(arr)-len(l))
+    l = [i for i in arr if isinstance(i, bool) or i != 0]
+    return l + [0] * (len(arr) - len(l))
+
 
 # The isinstance() function returns True if the specified object is of the specified type, otherwise False.
 # Check if the number 5 is an integer:
@@ -20,7 +22,8 @@ def move_zeros(arr):
 
 # clever
 def move_zeros(array):
-    return sorted(array, key=lambda x: x==0 and type(x) is not bool) 
+    return sorted(array, key=lambda x: x == 0 and type(x) is not bool)
+
 
 """
 To explain a little: sorted() will sort an iterable of inputs (in this case, array), 

@@ -21,7 +21,7 @@ def sum_arrangements(n: int) -> int:
     # ''.join converts a tuple into a string
     # ('1', '2', '3') -> ('123'), then convert to int
     # ≡ sum([int(''.join(x)) for x in _list]), (time.time() - start)
-    return reduce(lambda x, y: x + y, map(lambda x: int(''.join(x)), _list))
+    return reduce(lambda x, y: x + y, map(lambda x: int("".join(x)), _list))
 
 
 def sum_arrangements_(n: int) -> int:
@@ -35,17 +35,17 @@ def sum_arrangements_(n: int) -> int:
     # the sum of digits in each index will be the same
     # sum one index, multiple by unique_positions
     # d = sum([int(x) for x in n]) * unique_positions
-    d = reduce(lambda x, y: int(x)+int(y), n) * unique_positions
+    d = reduce(lambda x, y: int(x) + int(y), n) * unique_positions
 
     # need to apply power of tens
     # for i in reversed(range(len_n)):
     #     arranged_sum += (10 ** i) * d
     arranged_sum = reduce(
-        lambda x, y: x + y,
-        map(lambda i: (10 ** i) * d, reversed(range(len_n)))
-        )
+        lambda x, y: x + y, map(lambda i: (10 ** i) * d, reversed(range(len_n)))
+    )
 
     return arranged_sum
+
 
 # sum_arrangements(123) returns 1332 # 123 + 132 + 213 + 231 + 312 + 321 = 1332
 assert sum_arrangements(123) == 1332

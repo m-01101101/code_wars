@@ -17,12 +17,13 @@ Example:
 
 
 def find_missing_letter(chars: list) -> str:
-    alphabet = 'a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z'
-    alphabet = [a.upper() if chars[0].isupper()
-                else a for a in alphabet.split(', ')]
+    alphabet = (
+        "a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z"
+    )
+    alphabet = [a.upper() if chars[0].isupper() else a for a in alphabet.split(", ")]
     # in case chars not sorted and has duplicates
     input = list(sorted(set(chars)))
-    return [a for a, b in zip(alphabet[alphabet.index(input[0]):], input) if a != b][0]
+    return [a for a, b in zip(alphabet[alphabet.index(input[0]) :], input) if a != b][0]
 
 
 # The ord() function returns an integer representing the Unicode character.
@@ -30,6 +31,6 @@ def find_missing_letter(chars: list) -> str:
 # ord('A')  # 65
 def _find_missing_letter(chars):
     n = 0
-    while ord(chars[n]) == ord(chars[n+1]) - 1:
+    while ord(chars[n]) == ord(chars[n + 1]) - 1:
         n += 1
-    return chr(1+ord(chars[n]))
+    return chr(1 + ord(chars[n]))

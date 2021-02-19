@@ -11,5 +11,5 @@ import math
 golden_ratio = 1.61803398875
 
 
-def fib_n(n: int) -> int:
-    return int((pow(golden_ratio, n) - pow((1-golden_ratio), n)) / math.sqrt(n-1)    
+def fib_n(n: int) -> float:
+    return int((pow(golden_ratio, n) - pow((1 - golden_ratio), n))) / math.sqrt(n - 1)
